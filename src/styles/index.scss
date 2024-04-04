@@ -16,7 +16,31 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #0c0c1d;
+  color: lightgray;
+}
+
+// Reuseable css
+
+.container {
+  max-width: 136.6rem;
+  margin: 0 auto;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+  padding-top: 10rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
 }
