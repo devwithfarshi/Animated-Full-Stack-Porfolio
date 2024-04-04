@@ -12,28 +12,14 @@ const scrollIconVariant = {
 const heroImageVariant = {
   inVisible: {
     opacity: 0,
+    x: 500,
   },
   visible: {
     opacity: 1,
+    x: 0,
     transition: {
-      delay: 0.1,
-      duration: 2.5,
-      ease: "easeInOut",
-    },
-  },
-};
-
-const textContainerVariants = {
-  inVisible: {
-    flexBasis: "40%",
-  },
-  visible: {
-    flexBasis: "70%",
-    transition: {
-      delay: 0.1,
       duration: 1,
       ease: "easeInOut",
-      when: "beforeChildren",
     },
   },
 };
@@ -49,15 +35,45 @@ const logoVariant = {
     marginRight: 15,
     width: "6rem",
     transition: {
-      delay: 0.25,
+      delay: 1.5,
       duration: 1,
       ease: "easeIn",
     },
   },
 };
+
+const textVariant = {
+  inVisible: {
+    opacity: 0,
+    x: -500,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+      ease: "easeInOut",
+    },
+  },
+};
+const textSlideVariant = {
+  inVisible: {
+    x: 0,
+  },
+  visible: {
+    x: "-220%",
+    transition: {
+      duration: 20,
+      repeat: Infinity,
+      repeatType: "mirror",
+    },
+  },
+};
 export {
   logoVariant,
-  textContainerVariants,
   heroImageVariant,
   scrollIconVariant,
+  textSlideVariant,
+  textVariant,
 };

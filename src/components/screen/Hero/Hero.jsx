@@ -3,25 +3,16 @@ import { Link } from "react-router-dom";
 import { IoMdCall } from "react-icons/io";
 import { MdOutlineDeveloperMode } from "react-icons/md";
 import { SlMouse } from "react-icons/sl";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   heroImageVariant,
   logoVariant,
   scrollIconVariant,
-  textContainerVariants,
-} from "../../../animationVariants/Hero";
+  textVariant,
+  textSlideVariant,
+} from "../../../animationVariants/HeroAnimation";
 
 const Hero = () => {
-  const x = useMotionValue(200);
-  const y = useMotionValue(200);
-  const rotateX = useTransform(y, [0, 400], [45, -45]);
-  const rotateY = useTransform(x, [0, 400], [-45, 45]);
-  function handleMouse(event) {
-    const rect = event.currentTarget.getBoundingClientRect();
-
-    x.set(event.clientX - rect.left);
-    y.set(event.clientY - rect.top);
-  }
   return (
     <div className="hero">
       <div className="container">
@@ -30,39 +21,39 @@ const Hero = () => {
           initial="inVisible"
           animate="visible"
         >
-          <motion.div
-            className="textContainer"
-            variants={textContainerVariants}
-          >
-            <h6>Hello, I&apos;m</h6>
-            <h2>
+          <motion.div className="textContainer" variants={textVariant}>
+            <motion.h4 variants={textVariant}>@devwithfarshi</motion.h4>
+            <motion.h6 variants={textVariant}>Hello, I&apos;m</motion.h6>
+            <motion.h2 variants={textVariant}>
               <motion.img variants={logoVariant} src="favicon.svg" alt="dev" />
               <span>Salman Farshi</span>
-            </h2>
-            <h3>2D & 3D Web Developer</h3>
-            <div className="heroActions">
+            </motion.h2>
+            <motion.h3 variants={textVariant}>2D & 3D Web Developer</motion.h3>
+            <motion.div variants={textVariant} className="heroActions">
               <Link to="#">
-                <button>
+                <motion.button variants={textVariant}>
                   <MdOutlineDeveloperMode fontSize={20} />
                   See The Latest works
-                </button>
+                </motion.button>
               </Link>
               <Link to="#">
-                <button>
+                <motion.button variants={textVariant}>
                   <IoMdCall fontSize={20} /> Contact Me
-                </button>
+                </motion.button>
               </Link>
-            </div>
+            </motion.div>
             <motion.div className="scrollIcon" variants={scrollIconVariant}>
               <SlMouse />
             </motion.div>
           </motion.div>
-          <motion.figure onMouseMove={handleMouse} className="imageContainer">
-            <motion.img
-              variants={heroImageVariant}
-              src="/images/heroImg.png"
-              alt="Salman farshi"
-            />
+          <motion.div
+            variants={textSlideVariant}
+            className="slidingTextContainer"
+          >
+            Develop Your business with DevWithFarshi
+          </motion.div>
+          <motion.figure className="imageContainer" variants={heroImageVariant}>
+            <img src="/images/heroImg.png" alt="Salman farshi" />
           </motion.figure>
         </motion.div>
       </div>
