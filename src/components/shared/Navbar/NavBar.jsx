@@ -2,7 +2,6 @@ import "../../../styles/Navbar.scss";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FaTelegramPlane, FaFacebook } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { headerLogoVariants } from "../../../animationVariants/Header";
 import SideBar from "./Sidebar/SideBar";
 const NavBar = () => {
   return (
@@ -10,12 +9,7 @@ const NavBar = () => {
       <div className="container">
         <SideBar />
         <div className="nav_wrapper">
-          <motion.figure
-            className="logo"
-            variants={headerLogoVariants}
-            initial="inVisible"
-            animate="visible"
-          >
+          <motion.figure className="logo" initial="inVisible" animate="visible">
             <img src="/images/logo_icon_white.svg" />
             <span>DevWithFarshi</span>
           </motion.figure>
