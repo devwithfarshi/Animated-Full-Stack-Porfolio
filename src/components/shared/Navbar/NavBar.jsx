@@ -11,7 +11,7 @@ const NavBar = () => {
         <div className="nav_wrapper">
           <motion.figure className="logo" initial="inVisible" animate="visible">
             <img src="/images/logo_icon_white.svg" />
-            <span>DevWithFarshi</span>
+            <span>DWF</span>
           </motion.figure>
           <div className="nav__icons">
             <div className="nav__icon">

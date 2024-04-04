@@ -3,66 +3,25 @@ import { Link } from "react-router-dom";
 import { IoMdCall } from "react-icons/io";
 import { MdOutlineDeveloperMode } from "react-icons/md";
 import { SlMouse } from "react-icons/sl";
-import { motion } from "framer-motion";
-
-const scrollIconVariant = {
-  visible: {
-    y: -50,
-    transition: {
-      repeat: Infinity,
-      repeatType: "reverse",
-      duration: 0.7,
-    },
-  },
-};
-
-const heroImageVariant = {
-  inVisible: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      delay: 0.1,
-      duration: 2.5,
-      ease: "easeInOut",
-    },
-  },
-};
-
-const textContainerVariants = {
-  inVisible: {
-    flexBasis: "40%",
-  },
-  visible: {
-    flexBasis: "70%",
-    transition: {
-      delay: 0.1,
-      duration: 1,
-      ease: "easeInOut",
-      when: "beforeChildren",
-    },
-  },
-};
-
-const logoVariant = {
-  inVisible: {
-    opacity: 0,
-    width: 0,
-    marginRight: 0,
-  },
-  visible: {
-    opacity: 1,
-    marginRight: 15,
-    width: "auto",
-    transition: {
-      duration: 0.5,
-      ease: "easeInOut",
-    },
-  },
-};
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import {
+  heroImageVariant,
+  logoVariant,
+  scrollIconVariant,
+  textContainerVariants,
+} from "../../../animationVariants/Hero";
 
 const Hero = () => {
+  const x = useMotionValue(200);
+  const y = useMotionValue(200);
+  const rotateX = useTransform(y, [0, 400], [45, -45]);
+  const rotateY = useTransform(x, [0, 400], [-45, 45]);
+  function handleMouse(event) {
+    const rect = event.currentTarget.getBoundingClientRect();
+
+    x.set(event.clientX - rect.left);
+    y.set(event.clientY - rect.top);
+  }
   return (
     <div className="hero">
       <div className="container">
@@ -83,18 +42,22 @@ const Hero = () => {
             <h3>2D & 3D Web Developer</h3>
             <div className="heroActions">
               <Link to="#">
-                <MdOutlineDeveloperMode fontSize={20} />
-                See The Latest works
+                <button>
+                  <MdOutlineDeveloperMode fontSize={20} />
+                  See The Latest works
+                </button>
               </Link>
               <Link to="#">
-                <IoMdCall fontSize={20} /> Contact Me
+                <button>
+                  <IoMdCall fontSize={20} /> Contact Me
+                </button>
               </Link>
             </div>
             <motion.div className="scrollIcon" variants={scrollIconVariant}>
               <SlMouse />
             </motion.div>
           </motion.div>
-          <motion.figure className="imageContainer">
+          <motion.figure onMouseMove={handleMouse} className="imageContainer">
             <motion.img
               variants={heroImageVariant}
               src="/images/heroImg.png"
