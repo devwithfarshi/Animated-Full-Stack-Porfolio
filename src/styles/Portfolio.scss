@@ -1,0 +1,87 @@
+.portfolioSection {
+  &:nth-of-type(even) {
+    .portfolioItemWrapper {
+      flex-direction: row-reverse;
+      .textContainer {
+        text-align: end;
+        a {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
+.portfolio {
+  padding-top: 10rem;
+  .progress {
+    position: sticky;
+    top: 5rem;
+    left: 0;
+    z-index: 12;
+    h2 {
+      text-align: center;
+      color: orange;
+      font-size: 5rem;
+      font-weight: 800;
+      letter-spacing: 0.4rem;
+      font-family: "Open Sans", sans-serif;
+    }
+    .progressBar {
+      height: 1rem;
+      background-color: whitesmoke;
+    }
+  }
+  .portfolioItem {
+    height: 100%;
+    .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .portfolioItemWrapper {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+      figure {
+        flex: 1;
+        height: 60rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .textContainer {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        font-family: "Open Sans", sans-serif;
+        h4 {
+          font-size: 5rem;
+          line-height: 150%;
+          font-weight: 800;
+          letter-spacing: 0.4rem;
+        }
+        p {
+          font-family: "Lato", sans-serif;
+          color: gray;
+          font-size: 2rem;
+        }
+        h6 {
+          font-size: 2.4rem;
+        }
+        a {
+          padding: 1rem 5rem;
+          border-radius: 1.2rem;
+          background-color: orange;
+          align-self: flex-start;
+          color: #0a0a0a;
+          font-weight: 600;
+          text-transform: capitalize;
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}

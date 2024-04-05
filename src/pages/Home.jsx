@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import Parallax from "../components/common/Parallax/Parallax";
 import Hero from "../components/screen/Hero/Hero";
+import Portfolio from "../components/screen/Porffolio/Portfolio";
 import Services from "../components/screen/Services/Services";
 import NavBar from "../components/shared/Navbar/NavBar";
 
@@ -16,14 +18,12 @@ const Home = () => {
       <section>
         <Services />
       </section>
-      <section id="about">About</section>
-      <section>
+      {/* <section id="about">About</section> */}
+      <section id="portfolio">
         <Parallax type="portfolio" />
       </section>
-      <section id="portfolio">portfolio1</section>
-      <section>portfolio2</section>
-      <section>portfolio3</section>
-      <section id="contact">Contact</section>
+      <Portfolio />
+      {/* <section id="contact">Contact</section> */}
     </>
   );
 };
