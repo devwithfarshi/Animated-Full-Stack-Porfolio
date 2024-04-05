@@ -46,12 +46,11 @@ const Hero = () => {
               <SlMouse />
             </motion.div>
           </motion.div>
-          <motion.div
-            variants={textSlideVariant}
-            className="slidingTextContainer"
-          >
-            Develop Your business with DevWithFarshi
-          </motion.div>
+          <div className="slidingTextContainer">
+            <motion.p variants={textSlideVariant}>
+              Develop Your business with DevWithFarshi
+            </motion.p>
+          </div>
           <motion.figure className="imageContainer" variants={heroImageVariant}>
             <img src="/images/heroImg.png" alt="Salman farshi" />
           </motion.figure>

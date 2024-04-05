@@ -1,12 +1,17 @@
 .hero {
-  height: calc(100vh - 10rem);
+  // height: calc(100vh - 10rem);
+  height: 100%;
   background: linear-gradient(180deg, #0c0c1d, #111132);
+  position: relative;
+  overflow: hidden;
+
   .bannerWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 12rem;
+    // padding-top: calc(12rem + 10rem);
 
-    padding: 10rem 0;
     .textContainer {
       flex-basis: 70%;
       h4 {
@@ -79,13 +84,17 @@
   }
 
   .slidingTextContainer {
-    font-size: 50vh;
-    white-space: nowrap;
-    color: #ffffff09;
     position: absolute;
-    bottom: -20%;
-    width: 50%;
-    font-weight: 700;
-    font-family: "Open Sans", sans-serif;
+    bottom: -3%;
+    // width: 100%;
+    p {
+      font-size: 50vh;
+      white-space: nowrap;
+      color: #ffffff09;
+      font-weight: 700;
+      font-family: "Open Sans", sans-serif;
+      text-transform: capitalize;
+      user-select: none;
+    }
   }
 }
