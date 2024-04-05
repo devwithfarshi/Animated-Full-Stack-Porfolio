@@ -1,5 +1,6 @@
 import Parallax from "../components/common/Parallax/Parallax";
 import Hero from "../components/screen/Hero/Hero";
+import Services from "../components/screen/Services/Services";
 import NavBar from "../components/shared/Navbar/NavBar";
 
 const Home = () => {
@@ -9,10 +10,12 @@ const Home = () => {
       <section>
         <Hero />
       </section>
-      <section>
+      <section id="services">
         <Parallax type="services" />
       </section>
-      <section id="services">services</section>
+      <section>
+        <Services />
+      </section>
       <section id="about">About</section>
       <section>
         <Parallax type="portfolio" />
