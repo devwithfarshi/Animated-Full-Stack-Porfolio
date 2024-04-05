@@ -59,12 +59,12 @@ const textVariant = {
 };
 const textSlideVariant = {
   inVisible: {
-    x: 0,
+    x: "250vw",
   },
   visible: {
-    x: "-100vw",
+    x: "-250vw",
     transition: {
-      duration: 20,
+      duration: 100,
       repeat: Infinity,
       repeatType: "mirror",
     },
